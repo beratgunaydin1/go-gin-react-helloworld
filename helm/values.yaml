@@ -1,0 +1,42 @@
+deploy:
+  name: springboot-hello-world
+  namespace: application
+  replicas: 1
+  port: 8080
+  nodeport: 30634
+  image: cxberat5353/spring-boot
+  tag: ${BUILD_NUMBER}
+  requestCpu: 50m
+  requestMemory: 256Mi
+  limitCpu: "1"
+  limitMemory: 1Gi
+hpa:
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPUUtilizationPercentage: 82
+    targetMemoryUtilizationPercentage: 70
+    scaleDownstabilizationWindowSeconds: 120
+    scaleDownValue: 1
+    scaleDownPeriodSeconds: 60
+    scaleUpstabilizationWindowSeconds: 120
+    scaleUpValue: 1
+    scaleUpPeriodSeconds: 60
+probe:
+  readinesspath: /hello
+  livenesspath: /hello
+ingress:
+  enabled: false
+  hosts: test.berat.dev
+configmap:
+  enabled: false
+nodeselector:
+  enabled: false
+  module: ${service}
+tolerations:
+  enabled: false
+affinity:
+  enabled: false
+loadbalancer:
+  enabled: false
