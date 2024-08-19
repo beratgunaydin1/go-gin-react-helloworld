@@ -1,10 +1,10 @@
 deploy:
-  name: springboot-hello-world
+  name: go-gin-react-helloworld
   namespace: application
   replicas: 1
   port: 8080
   nodeport: 30634
-  image: cxberat5353/spring-boot
+  image: cxberat5353/go-gin-react-helloworld
   tag: ${BUILD_NUMBER}
   requestCpu: 50m
   requestMemory: 256Mi
@@ -24,8 +24,8 @@ hpa:
     scaleUpValue: 1
     scaleUpPeriodSeconds: 60
 probe:
-  readinesspath: /hello
-  livenesspath: /hello
+  readinesspath: /
+  livenesspath: /
 ingress:
   enabled: false
   hosts: test.berat.dev
