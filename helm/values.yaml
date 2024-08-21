@@ -7,7 +7,7 @@ deploy:
   image: cxberat5353/go-gin-react-helloworld
   tag: ${BUILD_NUMBER}
   requestCpu: 50m
-  requestMemory: 512Mi
+  requestMemory: 256Mi
   limitCpu: "1"
   limitMemory: 1Gi
 hpa:
