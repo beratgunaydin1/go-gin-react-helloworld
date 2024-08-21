@@ -2,7 +2,7 @@ deploy:
   name: go-gin-react-helloworld
   namespace: application
   replicas: 1
-  port: 8080
+  port: 3012
   nodeport: 30634
   image: cxberat5353/go-gin-react-helloworld
   tag: ${BUILD_NUMBER}
