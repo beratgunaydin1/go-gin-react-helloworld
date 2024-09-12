@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: fristservice
 spec:
-  type: nodeport
+  type: NodePort
   selector:
     app: fristpod
   ports:
