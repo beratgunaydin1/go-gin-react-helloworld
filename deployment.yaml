@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: fronted
+      app: fristpod
   template:
     metadata:
       labels:
-        app: fronted
+        app: fristpod
     spec:
       containers:
       - name: go-gin-react-helloworld
